@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stenography</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="stenography.css">
+  </head>
+  <div class="stenography">
+    <header class ="header">
+      <h1>Stenography: Sean Hiding in the Bushes!</h1>
+    </header>
+    <nav class="menu">
+      <button type="button" class="dropbtn" name="button">Menu</button>
+      <ul class="dropdown_content">
+        <li><a href="../index.html">Alejandro's Projects</a></li>
+        <li><a href="../SpiritedAway/homepage.html">Taiwan to Japan: A Spiriting Away</a></li>
+        <li><a href="imagefilter.html">Image Filters</a></li>
+        <li><a class="active" href="stenography.html">Stenography</a></li>
+      </ul>
+    </nav>
+    <aside class="uploads">
+      <h2>Image Uploads</h2>
+      <div class="container">
+        <h3>Bush: The bush to hid in.</h3>
+        <input type = "file" class="fileupload" multiple = "false" accept="image/*"
+               id="imginput" onchange="bushUpload()">
+        <canvas id=can></canvas>
+      </div>
+      <div class="container">
+        <h3>Sean: the man doing the hiding.</h3>
+        <input type = "file" class="fileupload" multiple = "false" accept="image/*"
+                 id="seaninput" onchange="seanUpload()">
+        <canvas id=sean></canvas>
+      </div>
+    </aside>
+    <aside class="imagePrep">
+      <h2>Image Preparation</h2>
+      <div class="container">
+        <h3>Modified Bush</h3>
+        <canvas id = "bushcanvas">Bush Canvas</canvas>
+      </div>
+      <p>
+        <div class="loader">
+        </div>
+        <input type="button" class="btn" value="Prep Time!" onclick="bush4Sean(); seanHiding();">
+      </p>
+      <div class="container">
+        <h3>Modified Sean</h3>
+        <canvas id = "seancanvas">Sean Canvas</canvas>
+      </div>
+    </aside>
+    <main class="hideImage">
+      <h2>Sean goes into Hiding!</h2>
+      <div class="hideBush container">
+        <p>
+          <input type="button" class="btn" value="Hide Sean!" onclick="hideSean()">
+        </p>
+        <canvas id ="hidingbush"></canvas>
+      </div>
+    </main>
+    <article class="showImage">
+      <h2>Come out Sean!</h2>
+      <div class="displayImage container">
+        <p>
+          <input type="button" class="btn" value="Come out!" onclick="showSean()">
+        </p>
+        <canvas id="display"></canvas>
+      </div>
+    </article>
+    <footer class="footer">
+      <p>
+        A website created by Alejandro Salazar
+      </p>
+    </footer>
+  </div>
+  <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+  </script>
+  <script src="stenography.js"></script>
+</html>

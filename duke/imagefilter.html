@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Image Filters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="imagefilter.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  </head>
+  <div class="wrapper">
+    <header class="header">
+      <h1>Image Filters</h1>
+    </header>
+    <nav class="menu">
+      <ul>
+        <li><a href="../index.html">Alejandro's Projects</a></li>
+        <li><a href="../SpiritedAway/homepage.html">Taiwan to Japan: A Spiriting Away</a></li>
+        <li><a class="active" href="imagefilter.html">Image Filters</a></li>
+        <li><a href="stenography.html">Stenography</a></li>
+      </ul>
+    </nav>
+    <div class="upload">
+      <button class="upbtn">Upload Your Image Here</button>
+      <input type="file" multiple="false" accept="image/*" id="fileimage" onchange="uploadImage()" />
+    </div>
+    <aside class="sidebar">
+      <h2>Select the filter you want to apply!</h2>
+      <div class="filters">
+        <input type="button" class="button" value="Grayscale" id="grayscale" onclick="grayScale()" />
+        <input type="button" class="button" value="Red Shift" id="redshift" onclick="redShift()" />
+        <input type="button" class="button" value="Green Shift" id="greenshift" onclick="greenShift()" />
+        <input type="button" class="button" value="Blue Shift" id="blueshift" onclick="blueShift()" />
+        <input type="button" class="button" value="Red Hue" id="redhues" onclick="redHue()" />
+        <input type="button" class="button" value="Greenscreen Fail" id="greenscreenfail" onclick="failedGreenScreen()">
+        <input type="button" class="button" value="Make it Rain(bow)" id="rainbow" onclick="duck_rainbows()" />
+        <input type="button" class="button" value="Blurry Face" id="blurimage" onclick="imageBlur()" />
+        <input type="button" class="button" value="Reset Image" id="resetimage" onclick="resetImage()" />
+        <input type="button" class="button" value="Clear Canvas" id="clearcanvas" onclick="clearCanvas()" />
+      </div>
+    </aside>
+    <main class="main">
+      <canvas id="before"></canvas>
+      <canvas id="after"></canvas>
+    </main>
+</div>
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<script src="imagefilter.js"></script>
+</html>

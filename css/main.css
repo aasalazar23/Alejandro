@@ -1,0 +1,156 @@
+.dropbtn {
+  background-color: rgba(49, 92, 43, 1);
+  color: white;
+  padding:14px;
+  border:none;
+  width: 100%;
+  text-align: left;
+}
+.menu {
+  position: relative;
+  display: block;
+}
+.dropdown_content {
+  display: none;
+  position:absolute;
+  margin: 0;
+  list-style-type: none;
+  background-color: rgba(49, 92, 43, 1);
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown_content a{
+  display:block;
+  padding: 14px 14px;
+  background-color: rgba(49, 92, 43, 1);
+  color: white;
+  text-decoration: none;
+}
+.dropdown_content a:hover {
+  background-color: rgba(71, 154, 60, 1);
+  color: white;
+}
+.menu:hover .dropdown_content {
+  display: block;
+}
+li a.active {
+  background-color: rgba(71, 154, 60, 1);
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: rgba(57, 111, 50, 1);
+  color: white;
+}
+
+body {
+  background-color: black;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+h1 {
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+h2 {
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+h3 {
+  color: white;
+  font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+p {
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  text-align: justify;
+}
+img {
+  width:100%;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  grid-area: header;
+  text-align: center;
+  background-color: rgba(28,63,50, 1);
+}
+.menu {
+  grid-area: nav;
+  margin-bottom: 10px;
+}
+.indexcontent {
+  grid-area: main;
+  padding: 20px;
+  background-color: rgba(60,137,109,1);
+}
+.footer {
+  grid-area: footer;
+}
+
+.container {
+  background-color: rgba(49, 111, 89, 1);
+  border: 10px solid rgba(39, 64, 41, 1);
+  padding: 15px;
+  margin: 5px;
+}
+.container:hover {
+  background-color: rgba(39, 64, 41, 1);
+  padding: 15px;
+  margin: 0px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+}
+.text {
+  padding: 5px;
+}
+.SAimage {
+  grid-area: SAimage;
+}
+.SAtext{
+  grid-area: SAtext;
+}
+.IFimage{
+  grid-area: IFimage;
+}
+.IFtext{
+  grid-area: IFtext;
+}
+.STimage {
+  grid-area: STimage;
+}
+.STtext {
+  grid-area: STtext;
+}
+@media screen and (min-width: 480px) {
+  .index {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
+    grid-template-areas:
+    ". header header ."
+    ". nav nav ."
+    ". main main ."
+    ". footer footer .";
+  } .indexcontent {
+    display:grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "SAimage SAtext"
+    "IFimage IFtext"
+    "STimage STtext";
+  } .dropbtn {
+    display:none;
+    }
+    .dropdown_content {
+      display: block;
+      position: relative;
+    }
+  .menu ul {
+    list-style-type: none;
+    overflow: hidden;
+  } li {
+    float:left;
+  }
+}

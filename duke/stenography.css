@@ -1,0 +1,115 @@
+canvas {
+  border: 3px solid rgba(39, 64, 41, 1);
+  width: 100%;
+  background-color: white;
+}
+input[type=button] {  /*input[type=button]*/
+  border: 3px solid rgb(168, 168, 168);
+  padding: 5px 20px;
+  color: rgb(148, 148, 148);
+  background-color: white;
+  font-size: 12px;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  overflow-wrap: break-word;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+}
+input[type=button]:hover {
+  color: white;
+  background-color: rgb(93, 93, 93);
+}
+/*
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear 5;
+  animation: spin 2s linear 5;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
+
+aside {
+  padding: 15px;
+  text-align: center;
+  height: 100%;
+}
+main {
+  padding: 15px;
+  text-align: center;
+}
+article {
+  padding: 15px;
+  text-align: center;
+}
+.fileupload {
+  background-color: gray;
+  padding:5px;
+  color: white;
+  margin: 5px;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  grid-area: header;
+  text-align: center;
+  background-color: rgba(28,63,50, 1);
+}
+.menu {
+  grid-area: nav;
+}
+.uploads {
+  grid-area: upload;
+  background-color: rgba(60,137,109,1);
+}
+.imagePrep {
+  background-color: rgba(60,137,109,1);
+  grid-area: prep;
+}
+.hideImage {
+  grid-area: hide;
+  background-color: rgba(60,137,109,1);
+}
+.showImage {
+  grid-area: show;
+  background-color: rgba(60,137,109,1);
+}
+.footer {
+  grid-area: footer;
+}
+@media screen and (min-width: 700px) {
+  .stenography {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
+    grid-template-areas:
+    ". header  header ."
+    ". nav     nav    ."
+    ". upload  prep   ."
+    ". hide    show   ."
+    ". footer  footer .";
+    } .dropbtn {
+      display:none;
+    } .dropdown_content {
+        display: block;
+        position: relative;
+    } .menu ul {
+      list-style-type: none;
+      overflow: hidden;
+    } li {
+      float:left;
+    }
+  }
