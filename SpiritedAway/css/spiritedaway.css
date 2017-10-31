@@ -58,6 +58,32 @@
     color: white;
     }
   }
+/*----------------- Master CSS -----------------*/
+  /* Grid Layout */ 
+  .page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 1fr auto;
+    grid-template-areas:
+    "nav nav"
+    "main main"
+    "footer footer";
+
+    height:100vh;
+  }
+    /* Grid Areas*/
+      .main_menu {
+        grid-area: nav;
+        width:100%;
+      }
+      main {
+        grid-area: main;
+      }
+      .footer {
+        grid-area: footer;
+        height: 20px;
+        padding-right: 2%;
+      }
 /*----------------- Menu/Navigation -----------------*/
   /* General Style */
     .dropbtn {
@@ -88,16 +114,13 @@
     } .lantern img {
       box-shadow: none;
     } .lantern.on {
-      /*On Lantern for current page*/
+      /*On Lantern for current screen*/
       filter: brightness(100%);
     }
 
 
   /* Grid Layout */
-    .main_menu {
-      grid-area: nav;
-      width:100%;
-      } .dropbtn {
+ .dropbtn {
         /* dropdown for mobile */  
         display: block;
         position: absolute;
@@ -209,7 +232,7 @@
 
 
 
-/*----------------- Main/Pages -------------------------*/
+/*----------------- Main/screens -------------------------*/
   /* ~~~~~~~~~~~~~~~~ Homepage ~~~~~~~~~~~~~~~~~~~~~~~~ */
     /* General Style */
       .head h1 {
@@ -240,20 +263,7 @@
         100% {opacity: 0}
       }
     /* Grid Layout */  
-      .homepage {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 40px 1fr auto;
-        grid-template-areas:
-        "nav nav"
-        "main main"
-        "footer footer";
-
-        height:100vh;
-      } /*Grid Areas*/
         .homeMain {
-          grid-area: main; 
-          
           display: grid;
           grid-template-columns: 1fr;
           grid-template-areas: 
@@ -272,7 +282,7 @@
                 position: relative;
                 z-index: -1;
 
-          } .homepagecontent {
+          } .homescreencontent {
                 grid-area: content;
                 
                 position: relative;
@@ -310,7 +320,7 @@
                   align-self: center;
               }  
         /* General Style */
-          .homepagecontent p {
+          .homescreencontent p {
             color: white;
             padding: 0;
           }     
@@ -321,27 +331,20 @@
 
   /* ~~~~~~~~~~~~~~~~ Project ~~~~~~~~~~~~~~~~~~~~~~~~~ */
     /* Grid Layout */
-      .project {
+      .projectContent {
+        grid-area: main;
         display: grid;
-        grid-template-areas:
-        "nav"
-        "main"
-        "footer";
       }
       @media screen and (min-width: 800px) {
-        /* Grid Layout */
-          .projectContent {
-            grid-area: main;
-            display: grid;
-          } /*Grid Areas*/
-            .page {
+        /*Grid Areas*/
+            .screen {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr 1fr;
               grid-template-rows: 1fr 1fr 1fr 1fr;
 
               height: 100vh;
             } /*Grid Areas*/
-                .page img {
+                .screen img {
                   grid-column-start: 1;
                   grid-column-end: 5;
                   grid-row-start:1;
@@ -376,12 +379,6 @@
           }    
       }
 
-
-
-
-
-
-
   /* ~~~~~~~~~~~~~~~~ Photo Gallery ~~~~~~~~~~~~~~~~~~~ */
     /* Animation */
         .container {
@@ -396,19 +393,10 @@
           opacity:1;
       }
     /* Grid Layout */
-    .gallery {
-      display: grid;
-      grid-template-areas:
-      "nav"
-      "main"
-      "footer";
-    } /*Grid Areas*/
-        .photogallerygrid {
-          grid-area: main;
-
-          display: grid;
-          grid-template-columns: 1fr;
-        }
+      .photogallerygrid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
     @media screen and (min-width: 800px) {
       .photogallerygrid {
             padding: 15px;
@@ -420,19 +408,6 @@
 
   /* ~~~~~~~~~~~~~~~~ About Us ~~~~~~~~~~~~~~~~~~~~~~~~ */
     /* Grid Layout */
-      .aboutus {
-        display: grid;
-        grid-template-rows: 40px 1fr auto;
-        grid-template-areas:
-          "nav"
-          "us"
-          "footer";
-
-        height: 100vh;
-      } /*Grid Areas*/
-          .us {
-            grid-area: us;
-          }
       @media screen and (min-width: 800px) {
         /* General Style */
           .bio p {
@@ -467,19 +442,6 @@
 
   /* ~~~~~~~~~~~~~~~~ Credits ~~~~~~~~~~~~~~~~~~~~~~~~~ */
     /* Grid Layout */
-      .credits {
-        display: grid;
-        grid-template-rows: 40px 1fr auto;
-        grid-template-areas:
-        "nav"
-        "main "
-        "footer";
-
-        height: 100vh;
-      } /*Grid Areas*/
-        .creditscontent {
-          grid-area: main;
-        }
     @media screen and (min-width: 800px) {
       /* Grid Layout */
         .creditscontent {
@@ -521,8 +483,3 @@
       font-size: .8em;
     }
   /* Grid Areas */
-    .footer {
-      grid-area: footer;
-      height: 20px;
-      padding-right: 2%;
-    }
