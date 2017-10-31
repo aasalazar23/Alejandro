@@ -244,22 +244,26 @@
       } 
 
     /* Animation */ 
-      .homeImg {
-        animation: homeSlides 20s linear infinite;  
-        } #meReal {
+      #me {
+          animation: homeSlides 12s linear infinite;
           animation-delay: 0s;
-        } #chihiroReal {
-          animation-delay: 5s;
-        } #meAway {
+          z-index: 1;
+        } #chihiro {
+          animation: homeSlides 12s linear infinite;
+          animation-delay: 6s;
+          z-index: 1;
+        } #real {
+          animation: homeSlides 20s linear infinite;
+          animation-delay: 0s;
+        } #sp {
+          animation: homeSlides 20s linear infinite;
           animation-delay: 10s;
-        } #chihiroAway {
-          animation-delay: 15s;
         }
       @keyframes homeSlides {
         0% { opacity: 0; animation-timing-function: ease-in;}
-        13% { opacity: 1; animation-timing-function: ease-out;}
-        26% {opacity: 1 }
-        50% { opacity: 0}
+        12% { opacity: 1; animation-timing-function: ease-out;}
+        50% {opacity: 1 }
+        62% { opacity: 0}
         100% {opacity: 0}
       }
     /* Grid Layout */  
