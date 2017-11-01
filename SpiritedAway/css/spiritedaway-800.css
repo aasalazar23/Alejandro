@@ -1,0 +1,87 @@
+@media screen and (min-width: 800px) {
+    h1 {
+      color:white;
+      font-size: 2em;
+    }
+    h2 {
+      color: white;
+    }
+    p {
+      color: white;
+      font-size: 1em;
+    }
+    .card {
+        align-self: center;
+        margin: 5%;
+        background-color: rgba(173,173,173,.5);
+        border: 2px solid rgba(173,173,173,.5);
+        border-radius: 10px;
+        color: white;
+    }
+  /* Menu */
+    /* General Style */
+    .dropbtn {
+        display: none;
+        } .lantern {
+        filter: drop-shadow(0px 0px 10px #f33a00);
+        margin:auto;
+        } .lantern.on {
+        /*On Lantern for current page*/
+        filter: brightness(100%);
+        filter: drop-shadow(0px 0px 30px #f33a00);
+        } .menu_icon {
+        max-width: 85px;
+        }   
+    /* Animation */ 
+        @keyframes swingLeft {
+            0% {transform: rotate(10deg);}
+            100% {transform: rotate(-10deg);}
+        } @keyframes swingRight {
+        0% {transform: rotate(-10deg);}
+        100% {transform: rotate(10deg);}
+        } .lanA{
+            padding-top: 10px;
+            animation-name: swingLeft;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        } .lanB {
+            animation-name: swingRight;
+            animation-duration: 4s;
+            animation-delay: .5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        } .menu_item:hover .lantern{
+        /*On lantern with cursor hover*/
+        filter: brightness(125%);
+        filter: drop-shadow(0px 0px 50px #f33a00);
+        transition: .5s ease-in-out;
+        }
+
+    /* Grid Layout */  
+        .main_menu {
+            position: relative;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr;
+
+            position: absolute;
+            top: 0;
+            width: 100%;
+        } .menu_item {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 40px 0px;
+            grid-template-areas: "name" "lan";
+
+            justify-items: center;
+        } /* Grid Areas*/ 
+        .menu_name {
+            justify-self: center;
+        }
+}
+

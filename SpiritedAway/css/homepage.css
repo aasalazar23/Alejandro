@@ -1,0 +1,61 @@
+    /* General Style */
+    .head h1 {
+        color: white;
+        font-size: 4.5vmin;
+      } 
+      .homeImg{
+        opacity: 0;
+      } 
+
+    /* Animation */ 
+      .homeImg {
+        box-shadow: none;
+      }
+      #me {
+          animation: homeSlides 12s linear infinite;
+          animation-delay: 0s;
+          z-index: 1;
+        } #chihiro {
+          animation: homeSlides 12s linear infinite;
+          animation-delay: 6s;
+          z-index: 1;
+        } #real {
+          animation: homeSlides 20s linear infinite;
+          animation-delay: 0s;
+        } #sp {
+          animation: homeSlides 20s linear infinite;
+          animation-delay: 10s;
+        }
+      @keyframes homeSlides {
+        0% { opacity: 0; animation-timing-function: ease-in;}
+        12% { opacity: 1; animation-timing-function: ease-out;}
+        50% {opacity: 1 }
+        62% { opacity: 0}
+        100% {opacity: 0}
+      }
+    /* Grid Layout */  
+        .homeMain {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas: 
+          "image" 
+          "content";
+        } /*Grid Areas*/
+            .head {
+                grid-area: image;
+
+                position: relative;
+                margin-top:30%;
+                margin-left:18%;
+          } .homeImg {
+                grid-area: image;
+
+                position: relative;
+                z-index: -1;
+
+          } .homescreencontent {
+                grid-area: content;
+                
+                position: relative;
+                align-self: start;
+          }

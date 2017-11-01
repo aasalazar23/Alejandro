@@ -1,0 +1,25 @@
+    /* Animation */
+    .container {
+        position:relative;
+    } .overlay {
+        position:absolute;
+        top:0;
+        bottom:0;
+        opacity:0;
+        transition: .5s ease;
+    } .container:hover .overlay {
+        opacity:1;
+    }
+  /* Grid Layout */
+    .photogallerygrid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  @media screen and (min-width: 800px) {
+    .photogallerygrid {
+          padding: 15px;
+          margin-top: 20px;
+          grid-gap: 15px;
+          grid-template-columns: 1fr 1fr;
+      }
+  }

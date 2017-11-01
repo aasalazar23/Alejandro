@@ -1,0 +1,48 @@
+    /* Grid Layout */
+    .projectContent {
+        grid-area: main;
+        display: grid;
+      }
+      @media screen and (min-width: 800px) {
+        /*Grid Areas*/
+            .screen {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr 1fr;
+
+              height: 100vh;
+            } /*Grid Areas*/
+                .screen img {
+                  grid-column-start: 1;
+                  grid-column-end: 5;
+                  grid-row-start:1;
+                  grid-row-end: 5;
+                  z-index: -1;
+
+                  position: relative;
+                  height: 100vh;
+              } .title {
+                  grid-column-start: 1;
+                  grid-column-end:2;
+                  grid-row-start:1;
+                  grid-row-end: 2;
+                  
+                  position: relative;
+                  align-self: end;
+                  padding-left: 3%;
+              } .text {
+                  grid-column-start: 3;
+                  grid-column-end: 5;
+                  grid-row-start: 2;
+                  grid-row-end: 3;
+                  
+                  position: relative;
+              } .symbols .text {
+                  grid-row-start:3;
+                  grid-row-end:5;
+              }
+        /* General Style */
+          .title {
+            font-size: 3em;
+          }    
+      }
