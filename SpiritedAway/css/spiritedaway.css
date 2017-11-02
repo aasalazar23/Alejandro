@@ -1,8 +1,8 @@
 /* ~~~~~~~~~~~~~~~~~general css~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   * {
     box-sizing: border-box;
+    margin: 0;
   }
-  
   html {
     height: 100%;
     overflow: hidden;
@@ -11,33 +11,23 @@
     height: 100%;
     overflow: auto;
     background-color: white;
-    margin:0;
+    color: black;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-
   }
-  
   img {
     width:100%;
-    box-shadow: 0 5px 10px black;
   }
-
   h1 {
-    color:black;
     font-size: 2em;
-    margin: 0;
   }
-  h2 {
-    color: black;
-    margin: 0;
-  }
-  p {
-    color: black;
-    margin: 0;
+  main p {
     font-size: 1em;
     padding: 3vh;
   }
+  main img {
+    box-shadow: 0 5px 10px black;
+  }
 
-/*----------------- Master CSS -----------------*/
   /* Grid Layout */ 
   .page {
     display: grid;
@@ -54,36 +44,31 @@
       .main_menu {
         grid-area: nav;
         width:100%;
+        background-color:#330000; 
+        color: white;
       }
       main {
         grid-area: main;
       }
       .footer {
         grid-area: footer;
-        height: 20px;
-        padding-right: 2%;
+        padding-left: 2%;
+
+        background-color:#330000;
+        color: white;
+        font-size: .8em;
       }
 /*----------------- Menu/Navigation -----------------*/
   /* General Style */
-    .dropbtn {
-      font-size: 1em;
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      color: white;
-      box-shadow: 0 5px 10px -1px #330000;
-      background-color:#330000;  
+    .top_menu {
+      box-shadow: 0 9px 23px -3px #330000;
     }
     .menu {
-      box-shadow: 0 9px 23px -3px #f33a00;
+      background-color: #330000;
     }
     .menu_item {
       color: white;
-      background-color: #330000;
       text-decoration: none;
-    } .menu_name {
-      background-color: #330000;
-    } .menu_item p {
-      color: white;
-      padding: 0;
     } .menu_item:hover .lantern{
       /*On lantern with cursor hover*/
       filter: brightness(125%);
@@ -91,35 +76,18 @@
     } .lantern {
       filter: brightness(50%);
     } .lantern img {
-      box-shadow: none;
+      padding: 3px;
     } .lantern.on {
       /*On Lantern for current screen*/
       filter: brightness(100%);
     }
 
-
-  /* Grid Layout */
- .dropbtn {
-        /* dropdown for mobile */  
-        display: block;
-        position: absolute;
-        top: 0;
-        z-index: 4;   
-
-        padding: 10px;
-        border: none;
-        
-        width: 100%;  
-        text-align: left;
-      } 
       /* Grid Layout */
         .menu {
           display: none;
-          grid-template-columns: 1fr;
           grid-template-rows: repeat(6, 40px);
           
           position: absolute;
-          top: 40px;
           z-index: 10;
           width: 100%;
           } .main_menu:hover .menu {
@@ -129,11 +97,11 @@
             .menu_item {
               /*Grid for displaying page links*/
               display: grid;
-              grid-template-columns: 30px 1fr;
+              grid-template-columns: 40px 1fr;
+              grid-template-rows: 40px;
               grid-column-gap: 5%;
               grid-template-areas: "lan name";
               
-              width: 100%;
               align-items: center;
             } 
             /* Grid Areas*/
@@ -142,14 +110,4 @@
               } .menu_name {
                   grid-area: name;
               }
-/*----------------- Footer -------------------------*/
-  /* General Style */
-      .footer {
-        text-align: right;
-        background-color:#330000;
-    } .footer p {
-      color: white;
-      padding:0;
-      font-size: .8em;
-    }
-  /* Grid Areas */
+
