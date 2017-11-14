@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="js/set-image.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- 360 Images -->
+
+        <img id="town" crossorigin="anonymous" src="https://ucarecdn.com/c9c479b2-8b87-4d03-81e5-f4e34d95e29f/">
+        <img id="bath" crossorigin="anonymous" src="https://ucarecdn.com/32f1039e-4e2e-43a4-8194-8309374f7f7d/">
+        <img id="garden" crossorigin="anonymous" src="https://ucarecdn.com/c5384052-ba4a-4683-b394-6e0be8b6ed40/">
+        <img id="jilong" crossorigin="anonymous" src="https://ucarecdn.com/c0e246fd-e104-4124-bd8c-f550a5896781/">
+        <img id="jilong-side" crossorigin="anonymous" src="https://ucarecdn.com/ccf72470-7e7e-4d71-80b3-de3cf0857da2/">
+        <img id="jiufen" crossorigin="anonymous" src="https://ucarecdn.com/da42cd58-6604-4734-be08-7603b6923162/">
+        <img id="meiji" crossorigin="anonymous" src="https://ucarecdn.com/456a3742-2a74-4036-ac63-ca0bc950c669/meiji.jpg">
+        <img id="temple" crossorigin="anonymous" src="https://ucarecdn.com/46ec279f-f47a-46e0-b1bb-24b558c9c853/">
+        <img id="yinyang" crossorigin="anonymous" src="https://ucarecdn.com/363062fd-ce9b-4ead-956e-b473f1a44029/"> 
+
+
+
+
+        <!-- Thumbnails -->
+ 
+        <img id="town-thumb" crossorigin="anonymous" src="images/town-thumb.jpg">        
+        <img id="bath-thumb" crossorigin="anonymous" src="images/bath-thumb.jpg">
+        <img id="garden-thumb" crossorigin="anonymous" src="images/garden-thumb.jpg">
+        <img id="jilong-thumb" crossorigin="anonymous" src="images/jilong-thumb.jpg">
+        <img id="jilong-side-thumb" crossorigin="anonymous" src="images/jilong-side-thumb.jpg">
+        <img id="jiufen-thumb" crossorigin="anonymous" src="images/jiufen-thumb.jpg">
+        <img id="meiji-thumb" crossorigin="anonymous" src="images/meiji-thumb.jpg">
+        <img id="temple-thumb" crossorigin="anonymous" src="images/temple-thumb.jpg">
+        <img id="yinyang-thumb" crossorigin="anonymous" src="images/yinyang-thumb.jpg">
+        
+        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        
+        
+
+        <!-- Image link template to be reused. -->
+        <script id="link" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: ${src}"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#town"></a-sky>
+
+      <!-- Image links. -->
+      <a-entity id="links" layout="type: box; columns: 3; margin: 1.25" position="-3 -1 -4">
+        <a-entity template="src: #link" data-src="#meiji" data-thumb="#meiji-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#town" data-thumb="#town-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#bath" data-thumb="#bath-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#garden" data-thumb="#garden-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#jilong" data-thumb="#jilong-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#jilong-side" data-thumb="#jilong-side-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#jiufen" data-thumb="#jiufen-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#temple" data-thumb="#temple-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#yinyang" data-thumb="#yinyang-thumb"></a-entity>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

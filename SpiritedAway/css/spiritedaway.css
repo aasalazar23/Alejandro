@@ -87,7 +87,7 @@
           display: none;
           grid-template-rows: repeat(6, 40px);
           
-          position: absolute;
+          position: relative;
           z-index: 10;
           width: 100%;
           } .main_menu:hover .menu {
